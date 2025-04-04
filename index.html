@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="static/style/style.css">
+  </head>
+  <body>
+    <section>
+      <article>
+        <div class="start_container active_start_container">
+          <h1 class="title">Select quiz</h1>
+          <div class="buttons">
+            <button class="quiz_button html_button" data-fetch="html">HTML</button>
+            <button class="quiz_button css_button" data-fetch="css">CSS</button>
+            <button class="quiz_button js_button" data-fetch="js">JavaScript</button>
+            <button class="quiz_button python_button" data-fetch="py">Python</button>
+            <button class="quiz_button java_button" data-fetch="java">Java</button>
+          </div>
+        </div>
+        <div class="box_container">
+          <!-- start box 1 -->
+          <div class="box">
+
+            <div class="box_header">
+              <div class="info">
+                <h1 class="title"></h1>
+                <span class="timer">
+                  <p class="timer_txt">Time</p>
+                  <p class="timer_numb">00:00</p>
+                </span>
+              </div>
+              <span class="timer_line"></span>
+            </div>
+
+            <div class="box_main">
+              <h2 class="question"></h2>
+              <ul class="answers_list"></ul>
+            </div>
+
+            <div class="box_footer">
+              <button class="next">Next</button>
+              <div class="question_bullets"></div>
+            </div>
+
+          </div>
+          <!-- end box 1 -->
+        </div>
+        <div class="result_container">
+          <h1 class="title">You've completed the Quiz!</h1>
+          <h2 class="result"></h2>
+          <div class="buttons">
+            <button class="replay button">Replay quiz</button>
+            <button class="quit button">Quit quiz</button>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer>
+      <div class="copy_right">
+        <p>&copy; 2025 <span>Mazen Hashem</span> All Right Reserved</p>
+      </div>
+    </footer>
+
+    <script src="dynamic/index.js"></script>
+  </body>
+</html>

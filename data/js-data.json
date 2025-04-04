@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Inside which HTML element do we put the JavaScript",
+    "answer_1": "<scripting>",
+    "answer_2": "<script>",
+    "answer_3": "<js>",
+    "answer_4": "<javascript>",
+    "right_answer": "<script>"
+  },
+  {
+    "title": "How to write an IF statement in JavaScript",
+    "answer_1": "if i = 5 then",
+    "answer_2": "if i = 5",
+    "answer_3": "if i == 5 then",
+    "answer_4": "if (i == 5)",
+    "right_answer": "if (i == 5)"
+  },
+  {
+    "title": "How to write an IF statement for executing some code if 'i' is NOT equal to 5",
+    "answer_1": "if i =! 5 then",
+    "answer_2": "if i <> 5",
+    "answer_3": "if (i <> 5)",
+    "answer_4": "if (i != 5)",
+    "right_answer": "if (i != 5)"
+  },
+  {
+    "title": "What is the correct way to write a JavaScript array",
+    "answer_1": "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
+    "answer_2": "var colors = (1:'red', 2:'green', 3:'blue')",
+    "answer_3": "var colors = ['red', 'green', 'blue']",
+    "answer_4": "var colors = 'red', 'green', 'blue'",
+    "right_answer": "var colors = ['red', 'green', 'blue']"
+  },
+  {
+    "title": "How do you round the number 7.25, to the nearest integer",
+    "answer_1": "round(7.25)",
+    "answer_2": "rnd(7.25)",
+    "answer_3": "Math.round(7.25)",
+    "answer_4": "Math.rnd(7.25)",
+    "right_answer": "Math.round(7.25)"
+  },
+  {
+    "title": "How do you find the number with the highest value of x and y",
+    "answer_1": "ceil(x, y)",
+    "answer_2": "Math.ceil(x, y)",
+    "answer_3": "top(x, y)",
+    "answer_4": "Math.max(x, y)",
+    "right_answer": "Math.max(x, y)"
+  },
+  {
+    "title": "Which event occurs when the user clicks on an HTML element",
+    "answer_1": "onmouseover",
+    "answer_2": "onmouseclick",
+    "answer_3": "onchange",
+    "answer_4": "onclick",
+    "right_answer": "onclick"
+  }
+]

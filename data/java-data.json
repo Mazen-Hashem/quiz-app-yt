@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Which of the following are not Java keywords",
+    "answer_1": "Double",
+    "answer_2": "Switch",
+    "answer_3": "Then",
+    "answer_4": "instanceof",
+    "right_answer": "Then"
+  },
+  {
+    "title": "Which of these have highest precedence",
+    "answer_1": ">>",
+    "answer_2": "++",
+    "answer_3": "()",
+    "answer_4": "*",
+    "right_answer": "()"
+  },
+  {
+    "title": "Which of these is returned by operator '&'",
+    "answer_1": "Integer",
+    "answer_2": "Boolean",
+    "answer_3": "Float",
+    "answer_4": "Character",
+    "right_answer": "Character"
+  },
+  {
+    "title": "Java language was initially called as ",
+    "answer_1": "oak",
+    "answer_2": "Sumatra",
+    "answer_3": "J++",
+    "answer_4": "Pine",
+    "right_answer": "oak"
+  },
+  {
+    "title": "Which one is a template for creating different objects",
+    "answer_1": "Interface",
+    "answer_2": "An Array",
+    "answer_3": "A class",
+    "answer_4": "Method",
+    "right_answer": "A class"
+  }
+]

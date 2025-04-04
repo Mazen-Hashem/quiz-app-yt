@@ -1,0 +1,595 @@
+/* start global rules */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+input {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+/* end global rules */
+
+
+section {
+  min-height: calc(100vh - 43px);
+  padding: 10px;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0) 50%, rgb(255, 255, 255));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+section article {
+  flex-basis: 500px;
+  position: relative;
+}
+
+
+/* ===== start container ===== */
+section article .start_container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+  border: 2px solid;
+  border-color: white black black white;
+  border-radius: 20px;
+  background-image: linear-gradient(45deg, rgb(255, 255, 255), rgb(0, 0, 0) 50%);
+}
+section article .active_start_container {
+  display: block;
+}
+
+
+section article .start_container .title {
+  width: fit-content;
+  margin: 0 auto 50px;
+  color: white;
+  font-size: 30px;
+}
+
+section article .start_container .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+section article .start_container .buttons .quiz_button {
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section article .start_container .buttons .quiz_button:hover {
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+}
+section article .start_container .buttons .quiz_button:active {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+/* ===== start container ===== */
+
+/* ===== box container ===== */
+section article .box_container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+section article .active_box_container {
+  display: block;
+}
+
+/* = box = */
+section article .box_container .box {
+  width: 100%;
+  border: 2px solid;
+  border-color: white black black white;
+  border-radius: 20px;
+  background-color: rgb(134, 134, 134);
+}
+
+/* box_header */
+section article .box_container .box .box_header {
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid white;
+}
+
+
+section article .box_container .box .box_header .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+section article .box_container .box .box_header .info .title {
+  color: white;
+  font-size: 25px;
+}
+section article .box_container .box .box_header .info .title::after {
+  content: ":";
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+section article .box_container .box .box_header .info .timer {
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+section article .box_container .box .box_header .info .timer .timer_txt {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section article .box_container .box .box_header .info .timer .timer_numb {
+  font-size: 15px;
+}
+
+
+section article .box_container .box .box_header .timer_line {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+}
+section article .box_container .box .box_header .active_timer_line {
+  width: 100%;
+}
+
+
+/* box_main */
+section article .box_container .box .box_main {
+  padding: 10px;
+}
+
+
+section article .box_container .box .box_main .question {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 25px;
+}
+section article .box_container .box .box_main .question::after {
+  content: " ?";
+  color: white;
+}
+
+
+/* section article .box_container .box .box_main .answers_list {} */
+
+section article .box_container .box .box_main .answers_list .answer_item {
+  position: relative;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+section article .box_container .box .box_main .answers_list .answer_item:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+section article .box_container .box .box_main .answers_list .answer_item::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  background-color: rgb(182, 182, 182);
+  transition: width 0.5s;
+}
+section article .box_container .box .box_main .answers_list .answer_item:hover::before {
+  width: 100%;
+}
+
+section article .box_container .box .box_main .answers_list .answer_item .answer_radio {
+  position: relative;
+  appearance: none;
+  margin: 0 20px;
+  cursor: pointer;
+}
+section article .box_container .box .box_main .answers_list .answer_item .answer_radio:checked::after {
+  display: block;
+}
+section article .box_container .box .box_main .answers_list .answer_item .answer_radio::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+section article .box_container .box .box_main .answers_list .answer_item .answer_radio::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: none;
+}
+
+section article .box_container .box .box_main .answers_list .answer_item .answer_txt {
+  flex: 1;
+  padding: 10px 10px 10px 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* box_footer */
+section article .box_container .box .box_footer {
+  padding: 10px;
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+section article .box_container .box .box_footer .next {
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section article .box_container .box .box_footer .next:hover {
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+}
+section article .box_container .box .box_footer .next:active {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+
+
+section article .box_container .box .box_footer .question_bullets {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+section article .box_container .box .box_footer .question_bullets .bullet {
+  padding: 2px 6px;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+section article .box_container .box .box_footer .question_bullets .active_bullet {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+}
+/* ===== box container ===== */
+
+/* ===== result_container===== */
+section article .result_container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+  border: 2px solid;
+  border-color: white black black white;
+  border-radius: 20px;
+  background-image: linear-gradient(45deg, rgb(255, 255, 255), rgb(0, 0, 0) 50%);
+}
+section article .active_result_container {
+  display: block;
+}
+
+
+section article .result_container .title {
+  width: fit-content;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 30px;
+}
+
+
+section article .result_container .result {
+  width: fit-content;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 20px;
+}
+
+
+section article .result_container .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}
+
+section article .result_container .buttons .button {
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section article .result_container .buttons .button:hover {
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+}
+section article .result_container .buttons .button:active {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+/* ===== result_container ===== */
+
+
+
+@media (max-width: 767px) {
+  section {
+    min-height: calc(100vh - 38px);
+    padding: 5px;
+  }
+  
+  
+  /* ===== start container ===== */
+  section article .start_container {
+    padding: 10px;
+  }
+  
+  
+  section article .start_container .title {
+    margin: 0 auto 30px;
+    font-size: 20px;
+  }
+  
+  section article .start_container .buttons {
+    gap: 5px;
+  }
+  
+  section article .start_container .buttons .quiz_button {
+    padding: 6px 9px;
+    font-size: 12px;
+    border: 1px solid black;
+  }
+  section article .start_container .buttons .quiz_button:hover {
+    border: 1px solid white;
+  }
+  section article .start_container .buttons .quiz_button:active {
+    border: 1px solid black;
+  }
+  /* ===== start container ===== */
+  
+  /* ===== box container ===== */
+  
+  /* box_header */
+  section article .box_container .box .box_header {
+    padding: 5px;
+  }
+  
+  
+  section article .box_container .box .box_header .info {
+    gap: 5px;
+  }
+  
+  section article .box_container .box .box_header .info .title {
+    font-size: 20px;
+  }
+  section article .box_container .box .box_header .info .title::after {
+    font-size: 25px;
+  }
+  
+  section article .box_container .box .box_header .info .timer {
+    padding: 5px;
+    gap: 5px;
+  }
+  
+  section article .box_container .box .box_header .info .timer .timer_txt {
+    font-size: 15px;
+  }
+  
+  section article .box_container .box .box_header .info .timer .timer_numb {
+    font-size: 12px;
+  }
+  
+  
+  
+  /* box_main */
+  section article .box_container .box .box_main {
+    padding: 5px;
+  }
+  
+  
+  section article .box_container .box .box_main .question {
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  section article .box_container .box .box_main .answers_list .answer_item:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+  
+  section article .box_container .box .box_main .answers_list .answer_item .answer_radio {
+    margin: 0 10px;
+  }
+  section article .box_container .box .box_main .answers_list .answer_item .answer_radio::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  section article .box_container .box .box_main .answers_list .answer_item .answer_radio::after {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  
+  section article .box_container .box .box_main .answers_list .answer_item .answer_txt {
+    padding: 5px 5px 5px 0;
+    font-size: 15px;
+  }
+  
+  
+  /* box_footer */
+  section article .box_container .box .box_footer {
+    padding: 5px;
+    gap: 5px;
+  }
+  
+  
+  section article .box_container .box .box_footer .next {
+    padding: 6px 9px;
+    font-size: 12px;
+    border: 1px solid black;
+  }
+  section article .box_container .box .box_footer .next:hover {
+    border: 1px solid white;
+  }
+  section article .box_container .box .box_footer .next:active {
+    border: 1px solid black;
+  }
+  
+  
+  section article .box_container .box .box_footer .question_bullets {
+    gap: 3px;
+  }
+  
+  section article .box_container .box .box_footer .question_bullets .bullet {
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+  /* ===== box container ===== */
+  
+  /* ===== result_container===== */
+  section article .result_container {
+    padding: 10px;
+  }
+  
+  
+  section article .result_container .title {
+    margin: 0 auto 10px;
+    font-size: 20px;
+  }
+  
+  
+  section article .result_container .result {
+    margin: 0 auto 10px;
+    font-size: 15px;
+  }
+  
+  
+  section article .result_container .buttons {
+    gap: 5px;
+  }
+  
+  section article .result_container .buttons .button {
+    padding: 6px 9px;
+    font-size: 12px;
+    border: 1px solid black;
+  }
+  section article .result_container .buttons .button:hover {
+    border: 1px solid white;
+  }
+  section article .result_container .buttons .button:active {
+    border: 1px solid black;
+  }
+  /* ===== result_container ===== */
+}
+
+
+
+
+/* footer */
+footer {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+footer .copy_right p {
+  font-size: 16px;
+}
+
+footer .copy_right p span {
+  font-size: 20px;
+  color: blue;
+}
+
+@media (max-width: 767px) {
+  footer .copy_right p {
+    font-size: 12px;
+  }
+  
+  footer .copy_right p span {
+    font-size: 16px;
+  }
+}

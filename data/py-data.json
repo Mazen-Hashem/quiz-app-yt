@@ -1,0 +1,42 @@
+[
+  {
+    "title": "What is a correct syntax to output 'Hello World' in Python",
+    "answer_1": "p('Hello World')",
+    "answer_2": "echo 'Hello World'",
+    "answer_3": "echo('Hello World');",
+    "answer_4": "print('Hello World')",
+    "right_answer": "print('Hello World')"
+  },
+  {
+    "title": "Which one is NOT a legal variable name",
+    "answer_1": "my_var",
+    "answer_2": "_myvar",
+    "answer_3": "Myvar",
+    "answer_4": "my-var",
+    "right_answer": "my-var"
+  },
+  {
+    "title": "What is the correct file extension for Python files",
+    "answer_1": ".pyth",
+    "answer_2": ".pyt",
+    "answer_3": ".pt",
+    "answer_4": ".py",
+    "right_answer": ".py"
+  },
+  {
+    "title": "What is the correct syntax to output the type of a variable or object in Python",
+    "answer_1": "print(type(x))",
+    "answer_2": "print(typeof x)",
+    "answer_3": "print(typeof(x))",
+    "answer_4": "print(typeOf(x))",
+    "right_answer": "print(type(x))"
+  },
+  {
+    "title": "Which method can be used to remove any whitespace from both the beginning and the end of a string",
+    "answer_1": "trim()",
+    "answer_2": "len()",
+    "answer_3": "ptrim()",
+    "answer_4": "strip()",
+    "right_answer": "strip()"
+  }
+]
